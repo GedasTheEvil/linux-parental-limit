@@ -1,5 +1,5 @@
 # Minimal parental control
-Notifies 15 minutes before time is up
+Notifies 15 minutes before time is up. Kills all apps when time is up
 
 ## Installation
 
