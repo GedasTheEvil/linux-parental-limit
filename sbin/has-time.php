@@ -42,12 +42,6 @@ function removePrefix($timeString) {
     return str_replace($pattern, '', $timeString);
 }
 
-$allowedTime = array_map('removePrefix', array_filter($allowedTime, 'isTime'));
-
-$timeNow = date('Hi');
-
-$isAllowed = NO;
-
 function inRange($timeNow, $timeRange) {
     $timeNow = (int)$timeNow;
     $parts = explode('-', $timeRange);
@@ -64,6 +58,10 @@ function isLessThan15min($timeNow, $timeRange) {
 
     return $max - $timeNow <= 15;
 }
+
+$allowedTime = array_map('removePrefix', array_filter($allowedTime, 'isTime'));
+$timeNow = date('Hi');
+$isAllowed = NO;
 
 foreach ($allowedTime as $timeRange) {
     if (inRange($timeNow, $timeRange)) {

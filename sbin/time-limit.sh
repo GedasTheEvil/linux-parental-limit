@@ -1,16 +1,20 @@
 #!/bin/bash
 
-CONFIG_PATH="/etc/security/time.conf"
-USER=$(whoami)
-
 YES="yes";
 NO="no";
 LESS_TAN_15_MINUTES="less-15";
+
+CONFIG_PATH="/etc/security/time.conf"
+USER="${1}"
+
+if [[ "${USER}" == "" ]]; then
+  USER=$(whoami)
+fi
+
 BIN_DIR=$(dirname "$0")
 
 ## TEST DATA START
 #CONFIG_PATH="./security/time.conf"
-#USER="laurynas"
 ## TEST DATA END
 
 MY_TIME=$(grep -vi "^#" "${CONFIG_PATH}"| grep "${USER}")
