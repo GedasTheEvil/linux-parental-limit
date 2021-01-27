@@ -25,7 +25,7 @@ if [[ "${HAS_TIME}" == "${YES}" ]]; then
 fi
 
 if [[ "${HAS_TIME}" == "${LESS_TAN_15_MINUTES}" ]]; then
-  "${BIN_DIR}/notify-user.sh" "Liko mažiau nei 15 minučių. Po to programos išsijungs be įspėjimo"
+  "${BIN_DIR}/notify-user.sh" ${USER} "Liko mažiau nei 15 minučių. Po to programos išsijungs be įspėjimo"
 fi
 
 if [[ "${HAS_TIME}" == "${NO}" ]]; then
