@@ -1,4 +1,4 @@
-BIN_DIR = /usr/local/sbin
+BIN_DIR = /usr/local/bin
 
 install:
 	cp sbin/exit-user.sh sbin/has-time.php sbin/notify-user.sh sbin/time-limit.sh ${BIN_DIR}
